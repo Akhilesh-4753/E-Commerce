@@ -40,27 +40,28 @@ const Register = () => {
   } 
 
   return (
-    <div className='mt-5'>
-      <h1 className='text-center'>Register</h1>
+    <div className='background-reg bg'>
+      <div className='box'>
+      <h1 className='text-center p-4 '>Register</h1>
       <Form className='w-25 m-auto' onSubmit={handleRegister}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>First Name</Form.Label>
-          <Form.Control type="text" placeholder="Enter First Name" onChange={(e)=>setFname(e.target.value)}/>
+          <Form.Control className='input' type="text" placeholder="Enter First Name" onChange={(e)=>setFname(e.target.value)}/>
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Last Name</Form.Label>
-          <Form.Control type="text" placeholder="Enter Last Name" onChange={(e)=>setLname(e.target.value)}/>
+          <Form.Control className='input' type="text" placeholder="Enter Last Name" onChange={(e)=>setLname(e.target.value)}/>
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>E-Mail</Form.Label>
-          <Form.Control type="email" placeholder="Enter Mail Address" onChange={(e)=>setEmail(e.target.value)}/>
+          <Form.Control className='input' type="email" placeholder="Enter Mail Address" onChange={(e)=>setEmail(e.target.value)}/>
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicPassword">
           <Form.Label>Password</Form.Label>
-          <Form.Control type="password" placeholder="Password" onChange={(e)=>setPassword(e.target.value)}/>
+          <Form.Control className='input' type="password" placeholder="Password" onChange={(e)=>setPassword(e.target.value)}/>
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicCheckbox">
@@ -70,12 +71,13 @@ const Register = () => {
           Sign Up
         </Button>
       </Form>
-      <h6 className='text-center mt-3 me-5'>
+      <h6 className='text-center mt-3 me-5 text-dark'>
         Already have an account?{' '} 
         <b className='text-decoration-underline text-primary'>
           <Link to={'/login'}>Login</Link>
         </b>
       </h6>
+      </div>
     </div>
   );
 }

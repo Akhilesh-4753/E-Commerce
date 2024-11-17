@@ -7,6 +7,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { auth } from './Components/Firebase'
 import "./App.css";
+import Header from './Components/Header'
 // import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
       {/* <div className='App'> */}
         <div className='auth-wrapper'>
           <div className='auth-inner'>
+            <Header/>
           <Routes>
              <Route path='/' element={user ? <Navigate to="/profile"/> : <Login/>}/>
              <Route path='/login' element={<Login/>}/>

@@ -32,10 +32,11 @@ const Profile = () => {
     }
   } 
   return (
+    <div className='background-prf bg'>
     <div className='profile'>
       {userDetails ? (
         <>
-        <h3>Welcome {userDetails.firstName}</h3>
+        <h3>Welcome {userDetails.firstName} 🙏🙏</h3>
         <div>
           <p>Email: {userDetails.email}</p>
           <p>First Name: {userDetails.firstName}</p>
@@ -46,6 +47,7 @@ const Profile = () => {
       ):(
         <p>Loading...</p>
       )}
+    </div>
     </div>
   );
 }
