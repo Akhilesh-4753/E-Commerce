@@ -42,7 +42,7 @@ const Register = () => {
   return (
     <div className='background-reg bg'>
       <div className='box'>
-      <h1 className='text-center p-4 '>Register</h1>
+      <h2 className='text-center text-secondary register'>Register</h2>
       <Form className='w-25 m-auto' onSubmit={handleRegister}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>First Name</Form.Label>

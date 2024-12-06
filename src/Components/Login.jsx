@@ -5,7 +5,6 @@ import { Link, useNavigate } from 'react-router-dom'
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { toast } from 'react-toastify';
 import { auth } from './Firebase';
-// import SignInwithGoogle from "./signInWIthGoogle";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -33,7 +32,7 @@ const Login = () => {
 
   return (
     <div className='background-lg bg'>
-    <h1 className='text-center p-4 text-secondary'>Login</h1>
+    <h2 className='text-center text-secondary login'>Login</h2>
     <Form className='w-25 m-auto' onSubmit={handleSubmit}>
     <Form.Group className="mb-3" controlId="formBasicEmail">
       <Form.Label>Email</Form.Label>

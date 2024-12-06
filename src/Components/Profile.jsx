@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { auth, db } from './Firebase';
 import { doc, getDoc } from 'firebase/firestore';
+import { useNavigate } from 'react-router-dom';
 
 const Profile = () => {
   const [userDetails, setUserDetails] = useState(null);
@@ -31,6 +32,11 @@ const Profile = () => {
       console.error("Error logging out:", error.message);
     }
   } 
+
+  const nav = useNavigate();
+  const homepage = () => {
+    nav("/home");
+  }
   return (
     <div className='background-prf bg'>
     <div className='profile'>
@@ -42,7 +48,10 @@ const Profile = () => {
           <p>First Name: {userDetails.firstName}</p>
           <p>Last Name: {userDetails.lastName}</p>
         </div>
-        <button className='btn btn-primary' onClick={handleLogout}>Logout</button>
+        <div className='button'>
+        <button className='btn btn-success' onClick={homepage}>Home Page</button>
+        <button className='btn btn-danger' onClick={handleLogout}>Logout</button>       
+        </div>
         </>
       ):(
         <p>Loading...</p>
