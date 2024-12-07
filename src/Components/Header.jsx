@@ -6,26 +6,21 @@
   import { ObjectArray } from './ProductsArray'
 
   const Header = () => {
-    const { arrayProducts,setFilteredProduct } = useContext(Product_Context);
-
+    const { arrayProducts,setFilteredProduct,filteredProduct } = useContext(Product_Context);
+    
     const [searchTerm, setSearchTerm] = useState("");
-    const navigate = useNavigate();
-    console.log(ObjectArray);
+  console.log(searchTerm)
     const handleSearch = (e) => { 
       e.preventDefault()
 
       if(searchTerm.trim()){
 
-        const filtered = ObjectArray.filter((product) =>         
-          product.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-          product.description.toLowerCase().includes(searchTerm.toLowerCase())
+        const filtered = arrayProducts.filter((product) =>         
+          product.title.toLowerCase().includes(searchTerm.toLowerCase())
       );        
-          setFilteredProduct(filtered);
-          navigate('/search-results');
-          console.log("f :",filtered);
+          setFilteredProduct(filtered);   
       }
     }
-
     return (
         <div className='heading'>
         <div className='logo'>

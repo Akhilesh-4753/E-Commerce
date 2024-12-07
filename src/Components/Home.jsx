@@ -1,34 +1,34 @@
-import React, { useContext, useEffect, useState } from 'react'
-import axios from 'axios'
-import { useNavigate } from 'react-router-dom';
-import { Product_Context } from '../App';
+import React, { useContext } from 'react'
+import { Product_Context } from '../App.js'
+import { useNavigate } from 'react-router-dom'
 
-const Home = () => {
-const {apiProducts,setApiProducts,apiProductId,setApiProductId} = useContext(Product_Context)
+const HomeNew = ({searchTerm}) => {
+  const {arrayProducts, setArrayProductId, filteredProduct} = useContext(Product_Context)
 
-  useEffect(() => {
-    axios
-    .get('https://dummyjson.com/products')
-    .then((i)=>setApiProducts(i.data.products))
-  }, [])
-  
   const nav = useNavigate();
-  const handleApiProductClick = (id) => {
-    setApiProductId(id);
+  const arrayProductClick = (id) => {
+    setArrayProductId(id);
     nav('/details')
   }
-console.log(apiProductId);
+  const displayProduct = searchTerm ? filteredProduct : arrayProducts;
+  
   return (
     <div className='containerr'>
       <div className='product-wrapper'>
-      {apiProducts.map((item)=>{  
+      {displayProduct.map((item)=>{
         return(
-          <div>
-            <div className='product-card text-center' key={item.id} onClick={ ()=> handleApiProductClick(item.id)}>
-                <h3>{item.title}</h3>
-                <h6>{item.description.substring(0, 100)}</h6>
-                <img style={{height: "100px", width: "auto"}} src={item.images[0]} alt="" />
-            </div>
+          <div className='product-card text-center' key={item.id} onClick={ ()=> arrayProductClick(item.id)}>
+             <h3>{item.title}</h3>
+             <h6>{item.description.substring(0,100)}</h6>
+             <img
+                style={{
+                height: '100px',
+                width: 'auto',
+                objectFit: 'contain',
+             }}
+               src={item.image}
+               alt={item.title}
+              />
           </div>
         )
       })}
@@ -37,4 +37,11 @@ console.log(apiProductId);
   )
 }
 
-export default Home
+export default HomeNew
+
+
+
+
+
+
+// {ProductDetailed[0].map((item)=> ivide 0 nte ullil ahhnn product details ullath . so [0] use cheyyunnu

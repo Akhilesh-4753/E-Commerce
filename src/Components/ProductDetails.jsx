@@ -1,14 +1,10 @@
 import React, { useContext} from 'react'
 import { Product_Context } from '../App'
 
-const ProductDetails = ({ isSearchResult = false }) => {
+const ProductDetails = ({searchTerm}) => {
   const { arrayProducts, arrayProductId, filteredProduct } = useContext(Product_Context);
 
-  // Use filteredProduct for search results, otherwise use the full product array
-  const productArray = isSearchResult ? filteredProduct : arrayProducts[0];
-  console.log(filteredProduct);
-
-  const selectedProduct = productArray.find((e) => e.id === arrayProductId);
+  const selectedProduct = arrayProducts.find((e) => e.id === arrayProductId)
   
   if(!selectedProduct){
     return <div style={{position:'relative', top: '150px', left: '120px'}}>Product not found.....</div>
