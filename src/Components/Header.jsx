@@ -9,6 +9,7 @@
     const { arrayProducts,setFilteredProduct,filteredProduct } = useContext(Product_Context);
     
     const [searchTerm, setSearchTerm] = useState("");
+    const navigate = useNavigate();
   console.log(searchTerm)
     const handleSearch = (e) => { 
       e.preventDefault()
@@ -18,7 +19,8 @@
         const filtered = arrayProducts.filter((product) =>         
           product.title.toLowerCase().includes(searchTerm.toLowerCase())
       );        
-          setFilteredProduct(filtered);   
+          setFilteredProduct(filtered); 
+          navigate('/searchDetails')  
       }
     }
     return (

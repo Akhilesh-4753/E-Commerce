@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import { Product_Context } from '../App.js'
 import { useNavigate } from 'react-router-dom'
 
-const HomeNew = ({searchTerm}) => {
+const HomeNew = ( {isSearchResult = false} ) => {
   const {arrayProducts, setArrayProductId, filteredProduct} = useContext(Product_Context)
 
   const nav = useNavigate();
@@ -10,7 +10,7 @@ const HomeNew = ({searchTerm}) => {
     setArrayProductId(id);
     nav('/details')
   }
-  const displayProduct = searchTerm ? filteredProduct : arrayProducts;
+  const displayProduct = isSearchResult ? filteredProduct : arrayProducts;
   
   return (
     <div className='containerr'>
