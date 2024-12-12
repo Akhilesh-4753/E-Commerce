@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import Table from 'react-bootstrap/Table';
 import { ObjectArray } from '../Components/ProductsArray'
 import { MdDelete, MdModeEdit } from "react-icons/md";
+import { Link } from 'react-router-dom';
 
 const AdminSheetTable = () => {
 
@@ -38,8 +39,8 @@ const AdminSheetTable = () => {
         <td>{item.rating}</td>
         <td>{item.price}</td>
         <td>{item.stock}</td>
-        <td><MdModeEdit color='blue' /></td>
-        <td><MdDelete color='red' /></td>
+        <td><Link to={`/edit/${item.id}`}><MdModeEdit color='blue' /></Link></td>
+        <td><Link><MdDelete color='red' /></Link></td>
       </tr>
         )
       })}

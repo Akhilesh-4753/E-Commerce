@@ -18,9 +18,7 @@ const HomeNew = ( {isSearchResult = false} ) => {
       {displayProduct.map((item)=>{
         return(
           <div className='product-card text-center' key={item.id} onClick={ ()=> arrayProductClick(item.id)}>
-             <h3>{item.title}</h3>
-             <h6>{item.description.substring(0,100)}</h6>
-             <img
+            <img
                 style={{
                 height: '100px',
                 width: 'auto',
@@ -29,6 +27,9 @@ const HomeNew = ( {isSearchResult = false} ) => {
                src={item.image}
                alt={item.title}
               />
+             <h3>{item.title}</h3>
+             <h6>{item.description.substring(0,100)}</h6>
+             
           </div>
         )
       })}

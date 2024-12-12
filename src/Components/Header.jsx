@@ -31,7 +31,7 @@
         <div className='nav-links'>
           <ul>
             <li><Link to={'/home'}>home</Link></li>
-            <li><a href="">shops</a></li>
+            <li><Link to={'/admin'}>shops</Link></li>
             <select name="collection" id="electronics">
                 <option value="collection">Collection</option>
                 <option value="saab">Latest</option>

@@ -29,7 +29,7 @@ import mouse from '../Images/mouse.jpg';
 import cpu from '../Images/cpu.avif';
 
 
-export const ObjectArray = [
+export let ObjectArray = [
    { id: 1, title: "Iphone", image: iphone, description: "The iPhone is a smartphone made by Apple that combines a computer, iPod, digital camera and cellular phone into one device with a touchscreen interface.", rating: 4.5,  price: 65000, stock: 15 },
    { id: 2, title: "Oppo", image: oppo, description: "Oppo (sometimes stylized as OPPO) is a Chinese consumer electronics manufacturer headquartered in Dongguan, Guangdong. Its major product lines include smartphones, smart devices, audio devices, power banks, and other electronic products.", rating: 3.8,  price: 18000, stock: 11 },
    { id: 3, title: "Vivo", image: vivo, description: "Vivo is one of the largest mobile brands on the planet. The company debuted with its entry-level phones line-up, but its flagship models have also gained achieved huge success. Vivo mobiles are known for their elegant and eye-catchy design that is also durable.", rating: 2.9,  price: 15500, stock: 6 },

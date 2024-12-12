@@ -13,6 +13,7 @@ import { ObjectArray } from './Components/ProductsArray'
 import ProductDetails from './Components/ProductDetails'
 import DataTable from './Admin/AdminSheet'
 import AdminSheetTable from './Admin/AdminSheetTable'
+import Edit from './Admin/Edit'
 
 const Product_Context = createContext();
 
@@ -42,6 +43,7 @@ function App() {
              <Route path='/details' element={<ProductDetails/>}/>
              <Route path='/searchDetails' element={<HomeNew isSearchResult={true}/>}/>
              <Route path='/admin' element={<AdminSheetTable/>}/>
+             <Route path='/edit/:id' element={<Edit/>}/>
           </Routes>
               <ToastContainer/>
       </BrowserRouter>

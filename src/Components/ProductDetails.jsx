@@ -1,8 +1,8 @@
 import React, { useContext} from 'react'
 import { Product_Context } from '../App'
 
-const ProductDetails = ({searchTerm}) => {
-  const { arrayProducts, arrayProductId, filteredProduct } = useContext(Product_Context);
+const ProductDetails = () => {
+  const { arrayProducts, arrayProductId } = useContext(Product_Context);
 
   const selectedProduct = arrayProducts.find((e) => e.id === arrayProductId)
   
